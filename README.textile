@@ -1,0 +1,37 @@
+h1. Huffman JS
+
+Huffman JS is an implementation of Huffman Algorithm in Javascript. It provides
+full compatibility with Huffman algorithm reference.
+
+h2. Basic Usage
+
+Include the JS file with latest version in your site (it will be in @dist@ directory):
+
+bc. <script type="text/javascript" src="huffman-0.9.0.min.js"></script>
+
+Them you can do a lot of things, let get a basic usage by generating a custom tree:
+
+bc. text = "some text to encode with huffman";
+huffman = Huffman.treeFromText(text); // first we need to create the tree to make encoding/decoding
+encoded = huffman.encode(text); // will return the compressed version of text
+decoded = huffman.decode(encoded); // will decode text to original version
+
+The idea to create a tree to use with same text may seem strange at first, but
+you probably will want to have a default to your encoding/decodings, otherwise
+you will need to send your tree with encoded text in order to decode it in other place.
+
+h2. Encoding / Decoding Trees
+
+You can easily save a Huffman Tree to use it again later (or transmit it will
+encoded information to receiver be capable to decode it if you are not using
+a default tree).
+
+bc. text = "some text to encode with huffman";
+huffman = Huffman.treeFromText(text); // generate the tree
+treeEncoded = huffman.encodeTree(); // will return an javascript array with tree representation
+treeAgain = Huffman.decodeTree(treeEncoded); // restore the tree based on array representation
+treeJSON = JSON.stringify(treeEncoded); // get a JSON string for easy transportation
+
+h2. Authors
+
+Wilker Lúcio da Silva

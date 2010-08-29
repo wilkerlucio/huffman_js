@@ -1,0 +1,25 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    bind (0.2.8)
+      commander (>= 4.0.0)
+    commander (4.0.3)
+      highline (>= 1.5.0)
+    highline (1.6.1)
+    json_pure (1.4.6)
+    jspec (4.3.3)
+      bind (>= 0.2.8)
+      commander (>= 4.0.1)
+      json_pure
+      sinatra
+    rack (1.2.1)
+    sinatra (1.0)
+      rack (>= 1.0)
+    yui-compressor (0.9.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  jspec (= 4.3.3)
+  yui-compressor (= 0.9.1)
