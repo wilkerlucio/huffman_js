@@ -1,0 +1,10 @@
+# encoding: utf-8
+
+desc "Compile CoffeeScripts and watch for changes"
+task :coffee do
+  coffee = IO.popen 'coffee -wc --no-wrap -o lib src/*.coffee 2>&1'
+  
+  while line = coffee.gets
+    puts line
+  end
+end
